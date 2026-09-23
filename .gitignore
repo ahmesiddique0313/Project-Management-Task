@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment files
+.env
+.env.*
+!.env.example
+server/.env
+server/.env.*
+
+# logs and editor files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
