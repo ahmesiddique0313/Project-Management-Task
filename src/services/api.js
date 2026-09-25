@@ -1,15 +1,16 @@
-const API_URL = import.meta.env.VITE_API_URL || '/api'
+const API_URL = "https://project-management-task-wc535.faable.link/api";
+// const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 export async function api(path, token, options = {}) {
   const response = await fetch(`${API_URL}${path}`, {
     ...options,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...options.headers,
     },
-  })
-  const data = await response.json().catch(() => ({}))
-  if (!response.ok) throw new Error(data.message || 'Request failed.')
-  return data
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || "Request failed.");
+  return data;
 }
