@@ -1,5 +1,6 @@
-const API_URL = "https://project-management-task-wc535.faable.link/api";
-// const API_URL = import.meta.env.VITE_API_URL || '/api'
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://project-management-task-wc535.faable.link/api";
 
 export async function api(path, token, options = {}) {
   const response = await fetch(`${API_URL}${path}`, {
